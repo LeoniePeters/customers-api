@@ -26,7 +26,7 @@ router.get('/companies/:id', (req, res, next) => {
     .catch(error => next(error))
 })
 
-router.post('./companies', (req, res, next) => {
+router.post('/companies', (req, res, next) => {
     Company
     .create(req.body)
     .then(company => {
