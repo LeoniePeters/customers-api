@@ -27,6 +27,9 @@ router.get('/companies/:id', (req, res, next) => {
 })
 
 
+module.exports = router
+
+
 
 // router.post('/customers', (req, res, next) => {
 //   Customer
