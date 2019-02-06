@@ -27,7 +27,7 @@ router.get('/companies/:id', (req, res, next) => {
 })
 
 router.post('/companies', (req, res, next) => {
-    Company
+  Company
     .create(req.body)
     .then(company => {
       if(!company) {
@@ -40,22 +40,22 @@ router.post('/companies', (req, res, next) => {
     .catch(error => next(error))
 })
 
+router.put('/companies/:id', (req, res, next) => {
+  Company
+    .findById(req.params.id)
+    .then(company => {
+      if (!company) {
+        return res.status(404).send({
+            message: `Company does not exist`
+        })
+      }
+      return company.update(req.body).then(company => res.send(company))
+    })
+    .catch(error => next(error))
+})
+
 module.exports = router
 
-
-// router.put('/customers/:id', (req, res, next) => {
-//   Customer
-//     .findById(req.params.id)
-//     .then(customer => {
-//       if (!customer) {
-//         return res.status(404).send({
-//           message: `Customer does not exist`
-//         })
-//       }
-//       return customer.update(req.body).then(customer => res.send(customer))
-//     })
-//     .catch(error => next(error))
-// })
 
 // router.delete('/customers/:id', (req, res, next) => {
 //   Customer
