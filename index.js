@@ -4,7 +4,7 @@ const customersRouter = require('./customers/routes')
 const companiesRouter = require('./companies/routes')
 
 const app = express()
-const port = process.env.PORT || 4001
+const port = process.env.PORT || 4002
 
 app
   .use(bodyParser.json())

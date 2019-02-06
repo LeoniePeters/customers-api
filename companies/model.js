@@ -7,7 +7,7 @@ const Company = sequelize.define('companies', {
         allowNull: false
     },
     founding_year: {
-        type: Sequelize.INT,
+        type: Sequelize.INTEGER,
         allowNull: false
     },
     description: {
