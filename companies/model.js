@@ -2,6 +2,10 @@ const Sequelize = require('sequelize')
 const sequelize = require('../db')
 
 const Company = sequelize.define('companies', {
+    companyID: {
+        type: Sequelize.INTEGER,
+        field: 'company_id'
+    },
     name: {
         type: Sequelize.TEXT,
         allowNull: false
