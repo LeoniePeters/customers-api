@@ -26,24 +26,22 @@ router.get('/companies/:id', (req, res, next) => {
     .catch(error => next(error))
 })
 
+router.post('./companies', (req, res, next) => {
+    Company
+    .create(req.body)
+    .then(company => {
+      if(!company) {
+          return res.status(404).send({
+              message: `Company does not exist`
+          })
+      }
+      return res.status(201).send(company)
+    })
+    .catch(error => next(error))
+})
 
 module.exports = router
 
-
-
-// router.post('/customers', (req, res, next) => {
-//   Customer
-//     .create(req.body)
-//     .then(customer => {
-//       if (!customer) {
-//         return res.status(404).send({
-//           message: `Customer does not exist`
-//         })
-//       }
-//       return res.status(201).send(customer)
-//     })
-//     .catch(error => next(error))
-// })
 
 // router.put('/customers/:id', (req, res, next) => {
 //   Customer
